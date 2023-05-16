@@ -1,8 +1,12 @@
+import React from "react";
+// import Hello from "./Hello";
+// import Wrapper from './Wrapper';
+import Counter from './Counter';
+
 function App() {
   return (
-    <div>
-      hello world
-    </div>
+    <Counter />
   );
 }
+
 export default App;
