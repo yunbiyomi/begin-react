@@ -1,51 +1,32 @@
 import React, {useRef} from "react";
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 // import Hello from "./Hello";
 // import Wrapper from './Wrapper';
 // import Counter from './Counter';
 // import InputSample from "./InputSample";
 import UserList from "./UserList";
 
-
-const SimpleButton = styled.button`
-  color:white;
-  background-color: green;
+const Circle = styled.div`
+  width: 5rem;
+  height: 5rem;
+  background-color: ${props => props.color || 'black'};
+  border-radius: 50%;
 `;
 
-const LargeButton = styled(SimpleButton)`
-  font-size: 50px;
+const LargeCircle = styled(Circle)`
+  ${props => 
+    props.huge &&
+    css`
+      width: 10rem;
+      height: 10rem;
+  `}
 `;
-
-// 이런식으로 하면 적용 안됨
-// const ReactButton = props => {
-//   return <button>{props.children}</button>
-// }
-
-// className을 지정해주어야 적용됨
-const ReactButton = props => {
-  return <button className={props.className}>{props.children}</button>
-}
-
-const ReactLargeButton = styled(ReactButton)`
-  font-size: 50px;
-`;
-
-const PrimaryButton = styled.button`
-  color:${props=>props.primary?'white':'black'};
-  background-color:${props=>props.primary?'black':'white'};
-`;
-
-// 디자인 동적으로 변경
 
 function App() {
   return (
     <div>
-      <SimpleButton>Simple</SimpleButton>
-      <LargeButton>Large</LargeButton>
-      <ReactButton>React</ReactButton>
-      <ReactLargeButton>React Large</ReactLargeButton>
-      <PrimaryButton>Normal</PrimaryButton>
-      <PrimaryButton primary>Primary</PrimaryButton>
+      <Circle color="blue"></Circle>
+      <LargeCircle color="red" huge></LargeCircle>
     </div>
   )
 }
