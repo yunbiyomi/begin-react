@@ -1,6 +1,7 @@
 import React from "react";
 import styled, {ThemeProvider} from 'styled-components';
 import Button from './components/Button';
+import Dialog from './components/Dialog';
 // import Hello from "./Hello";
 // import Wrapper from './Wrapper';
 // import Counter from './Counter';
@@ -71,6 +72,13 @@ function App() {
         </ButtonGroup>
       </AppBlock>
 
+      <Dialog 
+      title = "정말로 삭제하시겠습니까?"
+      confirmText = '삭제'
+      cancelText = '취소'
+      >
+        데이터를 정말로 삭제하시겠습니까?
+      </Dialog>
     </ThemeProvider>
   )
 }
