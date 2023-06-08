@@ -1,21 +1,40 @@
 import { useEffect, useState } from "react";
-import Button from "./Button";
+import styled from "styled-components";
 
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, SetKeyword] = useState("");
-  const onClick = () => setValue((prev) => prev + 1);
-  const onChange = (event) => SetKeyword(event.target.value);
-  console.log("i run all the time");
-  useEffect(() => {
-    console.log("CALL THE API.....");
-  }, []);
+  const LoginGroup = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `
+
+  const Login = styled.button`
+    width: 322px;
+    height: 44px;
+    border: 1px solid black;
+    border-radius: 22px;
+    background-color: white;
+  `;
+
+  const KakaoLogin = styled(Login)`
+    border-color: yellow;
+  `
+
+  const GoogleLogin = styled(Login)`
+    border-color: grey;
+  `
+
+  const FacebookLogin = styled(Login)`
+    border-color: blue;
+  `
+
   return (
-    <div>
-      <input value={keyword} onChange={onChange} type="text" placeholder="Search"></input>
-      <h1>{counter}</h1>
-      <button onClick={onClick}>click me</button>
-    </div>
+    <LoginGroup>
+      <KakaoLogin>카카오로 로그인</KakaoLogin>
+      <GoogleLogin>구글로 로그인</GoogleLogin>
+      <FacebookLogin>페이스북으로 로그인</FacebookLogin>
+    </LoginGroup>
   );
 }
 
