@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import About from './Components/About'
-import Product from './Components/Product'
+import Product from './Components/Productqs'
 import Contact from './Components/Contact'
 
 function ContentContainer({listName}){
